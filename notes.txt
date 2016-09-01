@@ -1,0 +1,43 @@
+POST: "/api/v01/process-pipeline"
+
+// Run command
+{
+    pipeline: [
+        {
+            pipeline_id: 0,
+            image_id: Hash,
+            inputs: {}
+        },
+        {
+            pipeline_id: Number,
+            plugin_id: Hash,
+            inputs: {
+                name: pipeline_id;
+                // or
+                value: Value;
+            }
+        },
+        ...
+    ]
+}
+
+// Schema for a plugin in DB
+{
+    _id: Hash,
+    name: String,
+    version: Number,
+    input: {
+        "name": {type: "type_name", default: value},
+        "name": {type: "type_name", default: value},
+        ...
+    },
+    output {
+        "name": "type",
+        ...
+    },
+    description: String,
+    creator: User_ID,
+    published: Date,
+    githubLink: URL,
+
+}
